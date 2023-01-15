@@ -19,6 +19,21 @@ entries:
   rallly-cleaned:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-01-15T22:38:13.310934373Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.1.9
+    description: A Helm chart for rallly
+    digest: 4621165fa74181fb253fb038e7283cbb59eb2bd9f093c5742c9113fcb74a5845
+    name: rallly-cleaned
+    type: application
+    urls:
+    - https://github.com/aottr/charts/releases/download/rallly-cleaned-0.1.1/rallly-cleaned-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-01-15T22:23:31.415987693Z"
     dependencies:
     - condition: postgresql.enabled
@@ -32,4 +47,4 @@ entries:
     urls:
     - https://github.com/aottr/charts/releases/download/rallly-cleaned-0.1.0/rallly-cleaned-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-15T22:23:31.415997893Z"
+generated: "2023-01-15T22:38:13.310945173Z"
