@@ -16,4 +16,20 @@ entries:
     urls:
     - https://github.com/aottr/charts/releases/download/rallly-0.1.0/rallly-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-15T16:46:31.479728205Z"
+  rallly-cleaned:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-01-15T22:23:31.415987693Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.1.9
+    description: A Helm chart for rallly
+    digest: 9f076c5638491e48b925fd68961fc3cf4338b9adc8cb3e89e468d5824cabcc12
+    name: rallly-cleaned
+    type: application
+    urls:
+    - https://github.com/aottr/charts/releases/download/rallly-cleaned-0.1.0/rallly-cleaned-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-01-15T22:23:31.415997893Z"
