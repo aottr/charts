@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "rallly.fullname" . }}
+  name: {{ include "rallly-cleaned.fullname" . }}
   labels:
-    {{- include "rallly.labels" . | nindent 4 }}
+    {{- include "rallly-cleaned.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "rallly.selectorLabels" . | nindent 6 }}
+      {{- include "rallly-cleaned.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "rallly.selectorLabels" . | nindent 8 }}
+        {{- include "rallly-cleaned.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "rallly.serviceAccountName" . }}
+      serviceAccountName: {{ include "rallly-cleaned.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -49,19 +49,19 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: SECRET_PASSWORD
-              value: {{ .Values.rallly.secretPassword | quote }}
+              value: {{ .Values.rallly-cleaned.secretPassword | quote }}
             - name: NEXT_PUBLIC_BASE_URL
-              value: {{ .Values.rallly.baseURL | quote }}
+              value: {{ .Values.rallly-cleaned.baseURL | quote }}
             - name: SUPPORT_EMAIL
-              value: {{ .Values.rallly.supportEmail | quote }}
+              value: {{ .Values.rallly-cleaned.supportEmail | quote }}
             - name: SMTP_PORT
-              value: {{ .Values.rallly.smtpPort | quote }}
+              value: {{ .Values.rallly-cleaned.smtpPort | quote }}
             - name: SMTP_USER
-              value: {{ .Values.rallly.smtpUser | quote }}
+              value: {{ .Values.rallly-cleaned.smtpUser | quote }}
             - name: SMTP_HOST
-              value: {{ .Values.rallly.smtpHost | quote }}
+              value: {{ .Values.rallly-cleaned.smtpHost | quote }}
             - name: SMTP_PWD
-              value: {{ .Values.rallly.smtpPassword | quote }}
+              value: {{ .Values.rallly-cleaned.smtpPassword | quote }}
             {{- if .Values.postgresql.enabled }}
             - name: DATABASE_URL
               value: "postgres://{{ .Values.postgresql.global.postgresql.auth.username }}:{{ .Values.postgresql.global.postgresql.auth.password }}@{{ .Release.Name}}-postgresql-hl:{{ .Values.postgresql.global.postgresql.service.ports.postgresql }}/{{ .Values.postgresql.global.postgresql.auth.database }}"

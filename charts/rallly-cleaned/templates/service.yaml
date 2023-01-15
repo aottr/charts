@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "rallly.fullname" . }}
+  name: {{ include "rallly-cleaned.fullname" . }}
   labels:
-    {{- include "rallly.labels" . | nindent 4 }}
+    {{- include "rallly-cleaned.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -11,4 +11,4 @@ spec:
       targetPort: 3000
       protocol: TCP
   selector:
-    {{- include "rallly.selectorLabels" . | nindent 4 }}
+    {{- include "rallly-cleaned.selectorLabels" . | nindent 4 }}

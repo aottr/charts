@@ -1,5 +1,5 @@
 apiVersion: v2
-name: rallly
+name: rallly-cleaned
 description: A Helm chart for rallly
 
 type: application
