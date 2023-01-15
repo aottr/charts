@@ -49,19 +49,19 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: SECRET_PASSWORD
-              value: {{ .Values.rallly-cleaned.secretPassword | quote }}
+              value: {{ .Values.rallly.secretPassword | quote }}
             - name: NEXT_PUBLIC_BASE_URL
-              value: {{ .Values.rallly-cleaned.baseURL | quote }}
+              value: {{ .Values.rallly.baseURL | quote }}
             - name: SUPPORT_EMAIL
-              value: {{ .Values.rallly-cleaned.supportEmail | quote }}
+              value: {{ .Values.rallly.supportEmail | quote }}
             - name: SMTP_PORT
-              value: {{ .Values.rallly-cleaned.smtpPort | quote }}
+              value: {{ .Values.rallly.smtpPort | quote }}
             - name: SMTP_USER
-              value: {{ .Values.rallly-cleaned.smtpUser | quote }}
+              value: {{ .Values.rallly.smtpUser | quote }}
             - name: SMTP_HOST
-              value: {{ .Values.rallly-cleaned.smtpHost | quote }}
+              value: {{ .Values.rallly.smtpHost | quote }}
             - name: SMTP_PWD
-              value: {{ .Values.rallly-cleaned.smtpPassword | quote }}
+              value: {{ .Values.rallly.smtpPassword | quote }}
             {{- if .Values.postgresql.enabled }}
             - name: DATABASE_URL
               value: "postgres://{{ .Values.postgresql.global.postgresql.auth.username }}:{{ .Values.postgresql.global.postgresql.auth.password }}@{{ .Release.Name}}-postgresql-hl:{{ .Values.postgresql.global.postgresql.service.ports.postgresql }}/{{ .Values.postgresql.global.postgresql.auth.database }}"

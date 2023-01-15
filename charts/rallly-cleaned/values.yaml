@@ -39,21 +39,21 @@ service:
   port: 3000
 
 ingress:
-  enabled: true
+  enabled: false
   className: ""
-  annotations:
-    kubernetes.io/ingress.class: traefik
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
+  annotations: {}
+    # kubernetes.io/ingress.class: traefik
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
+    # traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
   hosts:
-    - host: doodle.pebbl.dev
+    - host: rally.example.org
       paths:
         - path: /
           pathType: ImplementationSpecific
-  tls:
-    - secretName: rallly-cleaned-tls
-      hosts:
-        - doodle.pebbl.dev
+  tls: []
+    # - secretName: rallly-cleaned-tls
+    #  hosts:
+    #    - rally.example.org
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -80,9 +80,9 @@ tolerations: []
 
 affinity: {}
 
-rallly-cleaned:
-  secretPassword: "tattle#tainted#bruno#slept#bonelike#collie#maverick#zeta"
-  baseURL: "https://doodle.pebbl.dev"
+rallly:
+  secretPassword: "pedro#nugget#overpower#moistness#chain#palm#debt#causing#riverbed"
+  baseURL: "https://rally.example.org"
   supportEmail: "noreply@example.org"
   smtpHost: ""
   smtpPort: "25"
