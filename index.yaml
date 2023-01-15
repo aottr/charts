@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  rallly:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-01-15T16:46:31.479717605Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.1.9
+    description: A Helm chart for rallly
+    digest: 76d84a40f7b3dfcc77c3514e848e3342db7c1e8a10a37a802eca4bbe6a94a2a0
+    name: rallly
+    type: application
+    urls:
+    - https://github.com/aottr/charts/releases/download/rallly-0.1.0/rallly-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-01-15T16:46:31.479728205Z"
