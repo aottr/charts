@@ -62,6 +62,8 @@ spec:
               value: {{ .Values.rallly.smtpHost | quote }}
             - name: SMTP_PWD
               value: {{ .Values.rallly.smtpPassword | quote }}
+            - name: DISABLE_LANDING_PAGE
+              value: {{ .Values.rallly.disableLandingPage | quote }}
             {{- if .Values.postgresql.enabled }}
             - name: DATABASE_URL
               value: "postgres://{{ .Values.postgresql.global.postgresql.auth.username }}:{{ .Values.postgresql.global.postgresql.auth.password }}@{{ .Release.Name}}-postgresql-hl:{{ .Values.postgresql.global.postgresql.service.ports.postgresql }}/{{ .Values.postgresql.global.postgresql.auth.database }}"
