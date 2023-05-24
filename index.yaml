@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  pocketbase:
+  - apiVersion: v2
+    appVersion: 1.16.2
+    created: "2023-05-24T09:48:53.772416028Z"
+    description: A Helm chart for serving pocketbase on Kubernetes
+    digest: 92dc5317acaec7ff0fc42e42a29f89f13990d1a12dd0df852d3254f9b05c5fa8
+    name: pocketbase
+    type: application
+    urls:
+    - https://github.com/aottr/charts/releases/download/pocketbase-0.1.0/pocketbase-0.1.0.tgz
+    version: 0.1.0
   rallly:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -77,4 +88,4 @@ entries:
     urls:
     - https://github.com/aottr/charts/releases/download/rallly-cleaned-0.1.0/rallly-cleaned-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-18T12:08:54.64481571Z"
+generated: "2023-05-24T09:48:53.772427828Z"
